@@ -243,6 +243,38 @@ class SquiddyboiCat(Cat):
 # of the grading.                   #
 #####################################
 
+
+class RyanCat(Cat):
+    def _get_sprite_path(self) -> str:
+        return "images/ryan-dp.png"
+    def move(self) -> None:
+        #print(self.player_pos)
+
+        if (self.player_pos[0] == 6 and self.player_pos[1] == 7):
+            self.pos[0] = 6
+            self.pos[1] = 7
+            return
+
+        safe_positions = []
+        """
+        teleport anywhere
+        for i in range(self.grid_size):
+            for j in range(self.grid_size):
+                safe_positions.append((i,j))
+        """
+        for i in range(self.grid_size):
+            for j in range(self.grid_size):
+                if (i!= self.player_pos[0] and j != self.player_pos[1]):
+                    safe_positions.append((i,j))
+        
+        if safe_positions:
+            
+            new_pos = random.choice(safe_positions)
+            #print(edge_positions)
+            self.pos[0] = new_pos[0]
+            self.pos[1] = new_pos[1]
+
+
 class TrainerCat(Cat):
     """A customizable cat for students to implement and test their own behavior algorithms.
     
@@ -322,6 +354,7 @@ class CatChaseEnv(gym.Env):
             "paotsin": PaotsinCat,
             "peekaboo": PeekabooCat,
             "squiddyboi": SquiddyboiCat,
+            "ryan": RyanCat,
             "trainer": TrainerCat
         }
         if cat_type not in cat_types:
