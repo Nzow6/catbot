@@ -51,7 +51,6 @@ def play_q_table(env, q_table, move_delay=0.25, max_steps=1000, window_title=Non
     total_reward = 0.0
     next_move_time = time.time() + move_delay
     moves = 0
-    caught = False  # NEW FLAG
 
     while not done:
         env.render()
@@ -63,13 +62,6 @@ def play_q_table(env, q_table, move_delay=0.25, max_steps=1000, window_title=Non
             next_move_time = current_time + move_delay
             moves += 1
             done = terminated or truncated
-
-            # Check if caught
-            if terminated:
-                caught = True
-                print("Bot caught the cat!")
-                break
-
             if moves >= max_steps:
                 done = True
                 break
@@ -77,12 +69,12 @@ def play_q_table(env, q_table, move_delay=0.25, max_steps=1000, window_title=Non
             for event in pygame.event.get():
                 if event.type == pygame.QUIT:
                     env.close()
-                    return False
+                    return
                 if event.type == pygame.KEYDOWN and event.key == pygame.K_q:
                     env.close()
-                    return False
+                    return
 
     env.render()
     time.sleep(1)
     env.close()
-    return caught
+    return terminated
