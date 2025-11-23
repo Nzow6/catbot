@@ -271,6 +271,53 @@ class RyanCat(Cat):
             self.pos[0] = new_pos[0]
             self.pos[1] = new_pos[1]
 
+class DustineCat(Cat):
+    def _get_sprite_path(self) -> str:
+        return "images/dustine-dp.png"
+
+    def __init__(self, grid_size: int, tile_size: int):
+        super().__init__(grid_size, tile_size)
+        self.move_counter = 0
+
+    def move(self) -> None:
+        self.move_counter += 1
+
+        knight_moves = [
+            (-2, -1), (-2, 1), (-1, -2), (-1, 2),
+            (1, -2), (1, 2), (2, -1), (2, 1)
+        ]
+
+        best_moves = []
+        max_distance = -1
+
+        for dr, dc in knight_moves:
+            new_r = self.pos[0] + dr
+            new_c = self.pos[1] + dc
+
+            # Skip invalid moves
+            if not (0 <= new_r < self.grid_size and 0 <= new_c < self.grid_size):
+                continue
+
+            distance = abs(new_r - self.player_pos[0]) + abs(new_c - self.player_pos[1])
+
+            if distance > max_distance:
+                best_moves = [(new_r, new_c)]
+                max_distance = distance
+            elif distance == max_distance:
+                best_moves.append((new_r, new_c))
+
+        if best_moves:
+            # If the player moved closer, Dustine strongly wants to escape
+            if self.player_moved_closer():
+                move = random.choice(best_moves)
+            else:
+                # Else, occasionally get closer or mix movement
+                if random.random() < 0.3:
+                    move = random.choice(best_moves)
+                else:
+                    move = random.choice(best_moves)
+            self.pos[0], self.pos[1] = move
+
 class AngryCat(Cat):
     rage_meter=0
     rage_threshold = 4
@@ -497,7 +544,8 @@ class CatChaseEnv(gym.Env):
             "angry": AngryCat,
             "shy" : ShyCat,
             "copy" : CopyCat,
-            "trainer": TrainerCat
+            "trainer": TrainerCat,
+            "dustine": DustineCat
         }
         if cat_type not in cat_types:
             raise ValueError(f"Unknown cat type: {cat_type}. Available types: {list(cat_types.keys())}")
