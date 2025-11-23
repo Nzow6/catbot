@@ -291,20 +291,70 @@ class AngryCat(Cat):
 
         safe_positions = []
 
+        #teleport to any edge
+        edge_positions = []
+        for i in range(self.grid_size):
+            edge_positions.extend([
+                (0, i), 
+                (self.grid_size-1, i), 
+                (i, 0),          
+                (i, self.grid_size-1)   
+            ])
+        
+        edge_positions = list(set(edge_positions))
+        
+        safe_positions = []
+        for pos in edge_positions:
+            if abs(pos[0] - self.player_pos[0]) + abs(pos[1] - self.player_pos[1]) > self.rage_threshold:
+                safe_positions.append(pos)
+        
+        if safe_positions and self.rage_meter >=self.rage_threshold:
+            self.rage_meter = 0
+            new_pos = random.choice(safe_positions)
+            #print(edge_positions)
+            self.pos[0] = new_pos[0]
+            self.pos[1] = new_pos[1]
+
+class ShyCat(Cat):
+    last_direction = 's'
+    def _get_sprite_path(self) -> str:
+        return "images/ryan-dp.png"
+    def move(self) -> None:
+        
+        # directions: lrud
+
+        direction = 's'
+
+        if self.player_pos[0] >self.prev_player_pos[0] :
+            direction = 'd'
+        elif self.player_pos[0] < self.prev_player_pos[0] :
+            direction = 'u'
+        elif self.player_pos[1] >self.prev_player_pos[1]:
+            direction = 'r'
+        elif self.player_pos[1] <self.prev_player_pos[1]: 
+            direction = 'l'
+        else:
+            direction = self.last_direction
+
+        self.last_direction = direction
+
+        print(direction)
+
+        safe_positions = []
+
         #teleport anywhere else
         for i in range(self.grid_size):
             for j in range(self.grid_size):
                 if (i!= self.player_pos[0] and j != self.player_pos[1] and i != self.pos[0] and j != self.pos[1]):
                     safe_positions.append((i,j))
         
-        if safe_positions and self.rage_meter >=self.rage_threshold:
+        if safe_positions:
 
             
             new_pos = random.choice(safe_positions)
             #print(edge_positions)
             self.pos[0] = new_pos[0]
             self.pos[1] = new_pos[1]
-
 
 
 class TrainerCat(Cat):
@@ -388,6 +438,7 @@ class CatChaseEnv(gym.Env):
             "squiddyboi": SquiddyboiCat,
             "ryan": RyanCat,
             "angry": AngryCat,
+            "shy" : ShyCat,
             "trainer": TrainerCat
         }
         if cat_type not in cat_types:
