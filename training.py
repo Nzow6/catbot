@@ -5,16 +5,21 @@ import numpy as np
 import pygame
 from utility import play_q_table
 from cat_env import make_env
+
+#TODO: tinker with hyperparameters below
 #############################################################################
 # TODO: YOU MAY ADD ADDITIONAL IMPORTS OR FUNCTIONS HERE.                   #
 #############################################################################
 
-
-
-
-
-
-
+# get the exact state from the environment's observation (throwback to ccprog1) but only for distance reward
+def get_state(state):
+     
+    bot_row = state // 1000
+    bot_col = (state // 100) % 10
+    cat_row = (state // 10) % 10
+    cat_col = state % 10
+    
+    return bot_row, bot_col, cat_row, cat_col
 
 #############################################################################
 # END OF YOUR CODE. DO NOT MODIFY ANYTHING BEYOND THIS LINE.                #
@@ -39,13 +44,19 @@ def train_bot(cat_name, render: int = -1):
     # training process such as learning rate, exploration rate, etc.            #
     #############################################################################
 
+    # best epsilon = 1.0 up to 0.1
     #Default values for now
-    alpha = 0.5 # learning rate
+    alpha_start = 0.5
+    alpha_min = 0.2
+    alpha_decay = 0.999
     gamma = 0.9 # discount factor
     epsilon = 1.0 # randomness of exploration
-    epsilon_decay = 0.995 # decreasing rate of epsilon
 
-    outcomes = []
+    epsilon_decay = 0.992 # decreasing rate of epsilon
+    min_epsilon = 0.05 # minimum exploration rate 
+    max_steps = 60 # max steps per episode cos the bot might not reach the cat at all
+
+    outcomes = [] #idk how to use this yet pero nandito na to kanina so di ko na tinanggal
     
     #############################################################################
     # END OF YOUR CODE. DO NOT MODIFY ANYTHING BEYOND THIS LINE.                #
@@ -62,9 +73,61 @@ def train_bot(cat_name, render: int = -1):
         # 4. Since this environment doesn't give rewards, compute reward manually    #
         # 5. Update the Q-table accordingly based on agent's rewards.                #
         ############################################################################## 
-        state, info = env.reset()
-
+        state, _ = env.reset()
         
+        total_rewards = 0
+        done = False
+        
+        #epsilon greedy action selection
+        
+        for _ in range(max_steps):
+            
+            if random.random() < epsilon:
+                action = env.action_space.sample() # explore
+                
+            else:
+                action = np.argmax(q_table[state]) # exploit
+                
+            next_state, _, done, truncated, _ = env.step(action) # reward is always 0 in the step function so we can ignore it
+            
+            done = done or truncated # we reached the cat or max steps reached
+            
+            if done:
+                reward = 100 # reached the cat
+            else: 
+                reward = -1 
+                
+                #manhattan
+                ar, ac, cr, cc = get_state(state)
+                ar2, ac2, cr2, cc2 = get_state(next_state)
+                dist_before = abs(ar - cr) + abs(ac - cc)
+                dist_after = abs(ar2 - cr2) + abs(ac2 - cc2)
+                if dist_after < dist_before: 
+                    reward += 1.0
+                elif dist_after > dist_before: 
+                    reward -= 1.0
+                    
+    
+            print("Cat State: ", cr, cc, "Bot State: ", ar, ac, "Reward: ", reward)    
+            
+            if random.random() < epsilon:
+                next_action = env.action_space.sample()
+            else:
+                next_action = np.argmax(q_table[next_state])
+            
+            #sarsa algo
+            q_table[state][action] = q_table[state][action] + alpha_start * (reward + gamma * q_table[next_state][next_action] - q_table[state][action])
+            
+            total_rewards += reward
+            state = next_state
+            
+            if done:
+                break
+                
+        # decrease epsilon and alpha
+        epsilon = max(min_epsilon, epsilon * epsilon_decay)
+        alpha_start = max(alpha_min, alpha_start * alpha_decay)
+
         #############################################################################
         # END OF YOUR CODE. DO NOT MODIFY ANYTHING BEYOND THIS LINE.                #
         #############################################################################
