@@ -273,7 +273,7 @@ class RyanCat(Cat):
 
 class AngryCat(Cat):
     rage_meter=0
-    rage_threshold = 2
+    rage_threshold = 4
     is_enraged = 1 # if i want to implement the harder version of angry cat then i will use this
 
     def _get_sprite_path(self) -> str:
