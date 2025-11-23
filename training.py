@@ -6,7 +6,7 @@ import pygame
 from utility import play_q_table
 from cat_env import make_env
 
-#TODO: tinker with hyperparameters below
+#TODO: tinker with hyperparameters below to find best and also we should track the outcomes like what enzo put cos it makes it easier to tinker as well
 #############################################################################
 # TODO: YOU MAY ADD ADDITIONAL IMPORTS OR FUNCTIONS HERE.                   #
 #############################################################################
