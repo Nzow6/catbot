@@ -324,37 +324,73 @@ class ShyCat(Cat):
         # directions: lrud
 
         direction = 's'
-
+        player_los = [] # line of sight
         if self.player_pos[0] >self.prev_player_pos[0] :
             direction = 'd'
+            for i in range(self.player_pos[0],self.grid_size):
+                player_los.append((i,self.player_pos[1]))
+
         elif self.player_pos[0] < self.prev_player_pos[0] :
             direction = 'u'
+            for i in range(0,self.player_pos[0]+1):
+                player_los.append((i,self.player_pos[1]))
         elif self.player_pos[1] >self.prev_player_pos[1]:
             direction = 'r'
+            for i in range(self.player_pos[1],self.grid_size):
+                player_los.append((self.player_pos[0],i))
+
         elif self.player_pos[1] <self.prev_player_pos[1]: 
             direction = 'l'
+            for i in range(0,self.player_pos[1]+1):
+                player_los.append((self.player_pos[0],i))
         else:
             direction = self.last_direction
 
         self.last_direction = direction
 
-        print(direction)
+        #print(player_los)
 
+        #print(direction)
+
+        seen_by_player = False 
+        """
+        #same row
+        if self.player_pos[0] == self.pos[0]:
+            #check if cat is right and player looking right
+            if self.pos[1] >self.player_pos[1] and direction == 'r':
+                seen_by_player = True
+            #check if cat is left and player looking left
+            elif self.pos[1] <self.player_pos[1] and direction == 'l':
+                seen_by_player = True
+        #same col
+        elif self.player_pos[1] == self.pos[1]:
+            #check if cat is down and player looking down
+            if self.pos[0] >self.player_pos[0] and direction == 'd':
+                seen_by_player = True
+            #check if cat is left and player looking left
+            elif self.pos[0] <self.player_pos[0] and direction == 'u':
+                seen_by_player = True
+        """
+        if (self.pos[0],self.pos[1] )in player_los:
+            seen_by_player = True
+
+        #print(seen_by_player)
+
+        
         safe_positions = []
 
-        #teleport anywhere else
-        for i in range(self.grid_size):
-            for j in range(self.grid_size):
-                if (i!= self.player_pos[0] and j != self.player_pos[1] and i != self.pos[0] and j != self.pos[1]):
-                    safe_positions.append((i,j))
-        
-        if safe_positions:
-
-            
-            new_pos = random.choice(safe_positions)
-            #print(edge_positions)
-            self.pos[0] = new_pos[0]
-            self.pos[1] = new_pos[1]
+        if seen_by_player: 
+            #if seen by player, 
+            for i in range(self.grid_size):
+                for j in range(self.grid_size):
+                    if ( abs(i - self.pos[0]) + abs(j - self.pos[1]) <4) and abs(i - self.pos[0]) + abs(j - self.pos[1]) > 2 and (i,j) not in player_los and abs(i - self.player_pos[0]) + abs(j - self.player_pos[1]) >2: 
+                        safe_positions.append((i,j))
+            if safe_positions:
+                new_pos = random.choice(safe_positions)
+                self.pos[0] = new_pos[0]
+                self.pos[1] = new_pos[1]
+        else:
+            return
 
 
 class TrainerCat(Cat):
