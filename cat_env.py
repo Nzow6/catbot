@@ -391,6 +391,27 @@ class ShyCat(Cat):
                 self.pos[1] = new_pos[1]
         else:
             return
+        
+class CopyCat(Cat):
+    def _get_sprite_path(self) -> str:
+        return "images/ryan-dp.png"
+    def move(self) -> None:
+
+
+
+        if self.last_player_action == 0:
+            dir = (-1,0)
+        elif self.last_player_action == 1:
+            dir = (1,0)
+        elif self.last_player_action == 2:
+            dir = (0,-1)
+        else:
+            dir = (0,1)
+        new_pos = (self.pos[0] + dir[0] + self.grid_size ,self.pos[1] + dir[1] + self.grid_size)
+        self.pos[0] = new_pos[0] % self.grid_size
+        self.pos[1] = new_pos[1] % self.grid_size
+        return
+
 
 
 class TrainerCat(Cat):
@@ -475,6 +496,7 @@ class CatChaseEnv(gym.Env):
             "ryan": RyanCat,
             "angry": AngryCat,
             "shy" : ShyCat,
+            "copy" : CopyCat,
             "trainer": TrainerCat
         }
         if cat_type not in cat_types:
