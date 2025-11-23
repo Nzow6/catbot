@@ -250,18 +250,15 @@ class RyanCat(Cat):
     def move(self) -> None:
         #print(self.player_pos)
 
+        #if the player is on row 6 col 7, then teleport to player
         if (self.player_pos[0] == 6 and self.player_pos[1] == 7):
             self.pos[0] = 6
             self.pos[1] = 7
             return
 
         safe_positions = []
-        """
-        teleport anywhere
-        for i in range(self.grid_size):
-            for j in range(self.grid_size):
-                safe_positions.append((i,j))
-        """
+
+        #teleport anywhere
         for i in range(self.grid_size):
             for j in range(self.grid_size):
                 if (i!= self.player_pos[0] and j != self.player_pos[1]):
@@ -273,6 +270,41 @@ class RyanCat(Cat):
             #print(edge_positions)
             self.pos[0] = new_pos[0]
             self.pos[1] = new_pos[1]
+
+class AngryCat(Cat):
+    rage_meter=0
+    rage_threshold = 2
+    is_enraged = 1 # if i want to implement the harder version of angry cat then i will use this
+
+    def _get_sprite_path(self) -> str:
+        return "images/ryan-dp.png"
+    def move(self) -> None:
+        
+        
+
+        if self.player_pos[0] !=self.prev_player_pos[0] or self.player_pos[1] !=self.prev_player_pos[1] :
+            self.rage_meter+=1
+        else:
+            self.rage_meter = 0
+            return 
+        print(f"rage is: {self.rage_meter}")
+
+        safe_positions = []
+
+        #teleport anywhere else
+        for i in range(self.grid_size):
+            for j in range(self.grid_size):
+                if (i!= self.player_pos[0] and j != self.player_pos[1] and i != self.pos[0] and j != self.pos[1]):
+                    safe_positions.append((i,j))
+        
+        if safe_positions and self.rage_meter >=self.rage_threshold:
+
+            
+            new_pos = random.choice(safe_positions)
+            #print(edge_positions)
+            self.pos[0] = new_pos[0]
+            self.pos[1] = new_pos[1]
+
 
 
 class TrainerCat(Cat):
@@ -355,6 +387,7 @@ class CatChaseEnv(gym.Env):
             "peekaboo": PeekabooCat,
             "squiddyboi": SquiddyboiCat,
             "ryan": RyanCat,
+            "angry": AngryCat,
             "trainer": TrainerCat
         }
         if cat_type not in cat_types:
