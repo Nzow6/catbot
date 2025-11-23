@@ -28,7 +28,13 @@ def main():
     
     # Play using the trained Q-table
     env = make_env(cat_type=args.cat)
-    play_q_table(env, q_table, max_steps=60, window_title='Cat Chase - Final Trained Bot')
+    caught = play_q_table(env, q_table, max_steps=60, window_title='Cat Chase - Final Trained Bot')
+
+    if caught:
+        print("The bot successfully caught the cat!")
+    else:
+        print("The bot failed to catch the cat this time.")
+    
 
 if __name__ == "__main__":
     main()

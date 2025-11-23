@@ -94,6 +94,7 @@ def train_bot(cat_name, render: int = -1):
             
             if done:
                 reward = 200 # reached the cat
+                print('Cat was caught at: ', get_state(next_state))
             else: 
                 reward = -1 
                 
@@ -108,7 +109,7 @@ def train_bot(cat_name, render: int = -1):
                     reward -= 0.5
                     
     
-            print("Cat State: ", cr, cc, "Bot State: ", ar, ac, "Reward: ", reward)    
+            #print("Cat State: ", cr, cc, "Bot State: ", ar, ac, "Reward: ", reward)    
             
             if random.random() < epsilon:
                 next_action = env.action_space.sample()
