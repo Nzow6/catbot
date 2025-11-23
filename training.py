@@ -6,7 +6,7 @@ import pygame
 from utility import play_q_table
 from cat_env import make_env
 
-#TODO: tinker with hyperparameters below to find best and also we should track the outcomes like what enzo put cos it makes it easier to tinker as well
+#TODO: tinker with hyperparameters below
 #############################################################################
 # TODO: YOU MAY ADD ADDITIONAL IMPORTS OR FUNCTIONS HERE.                   #
 #############################################################################
@@ -47,9 +47,9 @@ def train_bot(cat_name, render: int = -1):
     # best epsilon = 1.0 up to 0.1
     #Default values for now
     alpha_start = 0.5
-    alpha_min = 0.2
-    alpha_decay = 0.999
-    gamma = 0.9 # discount factor
+    #alpha_min = 0.2
+    #alpha_decay = 0.999
+    gamma = 0.95 # discount factor
     epsilon = 1.0 # randomness of exploration
 
     epsilon_decay = 0.992 # decreasing rate of epsilon
@@ -93,7 +93,8 @@ def train_bot(cat_name, render: int = -1):
             done = done or truncated # we reached the cat or max steps reached
             
             if done:
-                reward = 100 # reached the cat
+                reward = 200 # reached the cat
+                print('Cat was caught at: ', get_state(next_state))
             else: 
                 reward = -1 
                 
@@ -103,12 +104,12 @@ def train_bot(cat_name, render: int = -1):
                 dist_before = abs(ar - cr) + abs(ac - cc)
                 dist_after = abs(ar2 - cr2) + abs(ac2 - cc2)
                 if dist_after < dist_before: 
-                    reward += 1.0
+                    reward += 0.5
                 elif dist_after > dist_before: 
-                    reward -= 1.0
+                    reward -= 0.5
                     
     
-            print("Cat State: ", cr, cc, "Bot State: ", ar, ac, "Reward: ", reward)    
+            #print("Cat State: ", cr, cc, "Bot State: ", ar, ac, "Reward: ", reward)    
             
             if random.random() < epsilon:
                 next_action = env.action_space.sample()
@@ -126,7 +127,7 @@ def train_bot(cat_name, render: int = -1):
                 
         # decrease epsilon and alpha
         epsilon = max(min_epsilon, epsilon * epsilon_decay)
-        alpha_start = max(alpha_min, alpha_start * alpha_decay)
+        #alpha_start = max(alpha_min, alpha_start * alpha_decay)
 
         #############################################################################
         # END OF YOUR CODE. DO NOT MODIFY ANYTHING BEYOND THIS LINE.                #
