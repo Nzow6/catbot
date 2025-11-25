@@ -18,7 +18,7 @@ def main():
     
     # Train the agent
     count = 0
-    while count <10:
+    while count <30:
         count+=1
         #print(f"\n\nIteration {count}")
 
