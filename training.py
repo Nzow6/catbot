@@ -20,12 +20,7 @@ def get_state(state):
     cat_col = state % 10
     
     return bot_row, bot_col, cat_row, cat_col
-def softmax(q_vals, tau):
-    preferences = q_vals / tau
-    max_pref = np.max(preferences) 
-    exp_values = np.exp(preferences - max_pref)
-    probabilities = exp_values / np.sum(exp_values)
-    return probabilities
+
 #############################################################################
 # END OF YOUR CODE. DO NOT MODIFY ANYTHING BEYOND THIS LINE.                #
 #############################################################################
@@ -55,10 +50,11 @@ def train_bot(cat_name, render: int = -1):
     alpha_min = 0.4
     alpha_decay = 0.995
     gamma = 0.9 # discount factor
-    # max_steps = 60  max steps per episode cos the bot might not reach the cat at all
-    tau = 2.0
-    tau_decay = 0.995
-    min_tau = 0.01
+    epsilon = 1.0 # randomness of exploration
+
+    epsilon_decay = 0.992 # decreasing rate of epsilon
+    min_epsilon = 0.05 # minimum exploration rate 
+    max_steps = 60 # max steps per episode cos the bot might not reach the cat at all
 
     outcomes = [] #idk how to use this yet pero nandito na to kanina so di ko na tinanggal
     
@@ -81,21 +77,24 @@ def train_bot(cat_name, render: int = -1):
         
         total_rewards = 0
         done = False
-
-        probabilities = softmax(q_table[state], tau)
-        action = np.random.choice(env.action_space.n, p=probabilities)
-
-        #softmax selection
-        while not done:
+        
+        #epsilon greedy action selection
+        
+        for _ in range(max_steps):
+            
+            if random.random() < epsilon:
+                action = env.action_space.sample() # explore
                 
-            next_state, reward, terminated, truncated, info = env.step(action) # perform action
+            else:
+                action = np.argmax(q_table[state]) # exploit
+                
+            next_state, _, done, truncated, _ = env.step(action) # reward is always 0 in the step function so we can ignore it
             
-            bot_pos = next_state // 100
-            cat_pos = next_state % 100
+            done = done or truncated # we reached the cat or max steps reached
             
-            if bot_pos == cat_pos:
-                reward = 100 
-                done = True
+            if done:
+                reward = 200 # reached the cat
+                #print('Cat was caught at: ', get_state(next_state))
             else: 
                 reward = -1 
                 
@@ -108,23 +107,27 @@ def train_bot(cat_name, render: int = -1):
                     reward += 0.5
                 elif dist_after > dist_before: 
                     reward -= 0.5
-            done = terminated or truncated       
+                    
     
             #print("Cat State: ", cr, cc, "Bot State: ", ar, ac, "Reward: ", reward)    
-            if not done:
-                next_probs = softmax(q_table[next_state], tau)
-                next_action = np.random.choice(env.action_space.n, p=next_probs)
-                q_table[state][action] = q_table[state][action] + alpha_start * (reward + gamma * q_table[next_state][next_action] - q_table[state][action])
-                total_rewards += reward
-                state = next_state
-                action = next_action
-            else:
-                q_table[state][action] += alpha_start * (reward - q_table[state][action])
             
+            if random.random() < epsilon:
+                next_action = env.action_space.sample()
+            else:
+                next_action = np.argmax(q_table[next_state])
+            
+            #sarsa algo
+            q_table[state][action] = q_table[state][action] + alpha_start * (reward + gamma * q_table[next_state][next_action] - q_table[state][action])
+            
+            total_rewards += reward
+            state = next_state
+            
+            if done:
+                break
                 
-        # decrease tau and alpha
+        # decrease epsilon and alpha
+        epsilon = max(min_epsilon, epsilon * epsilon_decay)
         alpha_start = max(alpha_min, alpha_start * alpha_decay)
-        tau = max(min_tau, tau * tau_decay)
 
         #############################################################################
         # END OF YOUR CODE. DO NOT MODIFY ANYTHING BEYOND THIS LINE.                #
