@@ -497,6 +497,82 @@ class StalkerCat(Cat):
         self.pos[1] = new_pos[1]
         return
 
+class DiagonalCat(Cat):
+    def _get_sprite_path(self) -> str:
+        return "images/ryan-dp.png"
+    def move(self) -> None:
+        """
+        chebyshev distance cat
+        tries to approach center area
+        """
+        run_moves = [] 
+        roam_moves = [] 
+        moves = {
+            (-1,0),(1,0),(0,-1),(0,1),
+            (1,1),(1,-1),(-1,1),(-1,-1)
+            }
+        possible_moves = []
+        for move in moves:
+            if self.pos[0] + move[0] <8 and self.pos[0] + move[0] >=0 and self.pos[1] + move[1] <8 and self.pos[1] + move[1] >=0:
+                possible_moves.append((self.pos[0] + move[0],self.pos[1] + move[1]))
+
+        
+        #try to get closer to center
+        distances = []
+
+        for pos in possible_moves:
+            distances.append(max(abs(pos[0] - 3.5), abs(pos[1] - 3.5)))
+        best_distance = min(distances)
+
+        for pos in possible_moves:
+            if max(abs(pos[0] - 3.5), abs(pos[1] - 3.5)) == best_distance:
+                roam_moves.append(pos)
+        
+        #try to get away from the player
+        distances = []
+
+        edge_factor = 0 
+
+        for pos in possible_moves:
+            if pos[0] ==0 or pos[0] == 7 or pos[1] ==0 or pos[1] == 7:
+                edge_factor = -1
+            else:
+                edge_factor = 0
+            distances.append(max(abs(pos[0] - self.player_pos[0]), abs(pos[1] - self.player_pos[1]))+edge_factor)
+        best_distance = max(distances)
+        for pos in possible_moves:
+            if pos[0] ==0 or pos[0] == 7 or pos[1] ==0 or pos[1] == 7:
+                edge_factor = -1
+            else:
+                edge_factor = 0
+            if max(abs(pos[0] - self.player_pos[0]), abs(pos[1] - self.player_pos[1])) +edge_factor == best_distance:
+               run_moves.append(pos)
+
+
+
+        """grid = np.zeros((self.grid_size, self.grid_size))
+        for r in range(self.grid_size):
+            for c in range(self.grid_size):
+                grid[r, c] = abs(r - self.player_pos[0]) + abs(c - self.player_pos[1])
+                if r ==0 or r == self.grid_size-1 or c ==0 or c == self.grid_size-1:
+                    edge_factor = -1
+                else:
+                    edge_factor = 0
+                grid[r, c] = max(abs(r - self.player_pos[0]), abs(c - self.player_pos[1]))+edge_factor
+        print(grid)"""
+
+        if self.current_distance >4 and random.random() <=1:
+            #print("roam")
+            new_pos = random.choice(roam_moves)
+            self.pos[0] = new_pos[0]
+            self.pos[1] = new_pos[1]
+            return
+        #print("run")
+        new_pos = random.choice(run_moves)
+        self.pos[0] = new_pos[0]
+        self.pos[1] = new_pos[1]
+        return
+
 
 class TrainerCat(Cat):
     """A customizable cat for students to implement and test their own behavior algorithms.
@@ -628,7 +704,8 @@ class CatChaseEnv(gym.Env):
             "copy" : CopyCat,
             "stalker" : StalkerCat,
             "trainer": TrainerCat,
-            "dustine": DustineCat
+            "dustine": DustineCat,
+            "diagonal": DiagonalCat
         }
         if cat_type not in cat_types:
             raise ValueError(f"Unknown cat type: {cat_type}. Available types: {list(cat_types.keys())}")
