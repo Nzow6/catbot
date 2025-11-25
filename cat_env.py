@@ -459,6 +459,43 @@ class CopyCat(Cat):
         self.pos[1] = new_pos[1] % self.grid_size
         return
 
+class StalkerCat(Cat):
+    def _get_sprite_path(self) -> str:
+        return "images/ryan-dp.png"
+    def move(self) -> None:
+
+        if self.current_distance > 5:
+            return
+
+        moves = {
+            (-2,0),(2,0),(0,-2),(0,2),
+            (1,1),(1,-1),(-1,1),(-1,-1)
+        }
+        moves_larger = {
+            (-2,0),(2,0),(0,-2),(0,2),
+            (1,1),(1,-1),(-1,1),(-1,-1),
+            (-1,0),(1,0),(0,-1),(0,1)
+        }
+        moves = list(moves)
+        moves_larger = list(moves_larger)
+
+        valid_pos = []
+        for i in range(self.grid_size):
+            for j in range(self.grid_size):
+                valid_pos.append((i,j))
+
+
+        dir = random.choice(moves)
+        new_pos = (self.player_pos[0] - dir[0]  ,self.player_pos[1] - dir[1] )    
+
+        while new_pos not in valid_pos:
+            dir = random.choice(moves_larger)
+            new_pos = (self.player_pos[0] - dir[0]  ,self.player_pos[1] - dir[1] )  
+                                                                                                                                                                                                                                                                                                                       
+
+        self.pos[0] = new_pos[0]                                                                                                                    
+        self.pos[1] = new_pos[1]
+        return
 
 
 class TrainerCat(Cat):
@@ -544,6 +581,7 @@ class CatChaseEnv(gym.Env):
             "angry": AngryCat,
             "shy" : ShyCat,
             "copy" : CopyCat,
+            "stalker" : StalkerCat,
             "trainer": TrainerCat,
             "dustine": DustineCat
         }
