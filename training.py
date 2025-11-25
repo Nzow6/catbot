@@ -83,25 +83,24 @@ def train_bot(cat_name, render: int = -1):
         total_rewards = 0
         done = False
 
-        probabilities = softmax(q_table[state], tau)
-        action = np.random.choice(env.action_space.n, p=probabilities)
 
         #softmax selection
         while not done and steps < max_steps:
             steps += 1
-            next_state, reward, terminated, truncated, info = env.step(action) # perform action
+            probabilities = softmax(q_table[state], tau)
+            action = np.random.choice(env.action_space.n, p=probabilities)
             
-            bot_pos = next_state // 100
-            cat_pos = next_state % 100
+            next_state, reward, terminated, truncated, _ = env.step(action) # perform action
             
-            if bot_pos == cat_pos:
+            ar, ac, cr, cc = get_state(state)
+            
+            if ar == cr and ac == cc:
                 reward = 100 
                 done = True
             else: 
                 reward = -1 
                 
                 #manhattan
-                ar, ac, cr, cc = get_state(state)
                 ar2, ac2, cr2, cc2 = get_state(next_state)
                 dist_before = abs(ar - cr) + abs(ac - cc)
                 dist_after = abs(ar2 - cr2) + abs(ac2 - cc2)
@@ -109,6 +108,7 @@ def train_bot(cat_name, render: int = -1):
                     reward += 0.5
                 elif dist_after > dist_before: 
                     reward -= 0.5
+                    
             done = terminated or truncated       
     
             #print("Cat State: ", cr, cc, "Bot State: ", ar, ac, "Reward: ", reward)    
