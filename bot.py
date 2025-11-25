@@ -17,23 +17,28 @@ def main():
     args = parser.parse_args()
     
     # Train the agent
-    print(f"\nTraining agent against {args.cat} cat...")
-    q_table = train_bot(
-        cat_name=args.cat,
-        render=args.render
-    )
-    
-    print("\nTraining complete! Starting game with trained bot...")
-    print("Press Q to quit.")
-    
-    # Play using the trained Q-table
-    env = make_env(cat_type=args.cat)
-    caught = play_q_table(env, q_table, max_steps=60, window_title='Cat Chase - Final Trained Bot')
+    count = 0
+    while count <10:
+        count+=1
+        print(f"Iteration {count}")
 
-    if caught:
-        print("The bot successfully caught the cat!")
-    else:
-        print("The bot failed to catch the cat this time.")
+        print(f"\nTraining agent against {args.cat} cat...")
+        q_table = train_bot(
+            cat_name=args.cat,
+            render=args.render
+        )
+        
+        print("\nTraining complete! Starting game with trained bot...")
+        print("Press Q to quit.")
+        
+        # Play using the trained Q-table
+        env = make_env(cat_type=args.cat)
+        caught = play_q_table(env, q_table, max_steps=60, window_title='Cat Chase - Final Trained Bot')
+
+        if caught:
+            print("The bot successfully caught the cat!")
+        else:
+            print("The bot failed to catch the cat this time.")
     
 
 if __name__ == "__main__":

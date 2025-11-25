@@ -94,7 +94,7 @@ def train_bot(cat_name, render: int = -1):
             
             if done:
                 reward = 200 # reached the cat
-                print('Cat was caught at: ', get_state(next_state))
+                #print('Cat was caught at: ', get_state(next_state))
             else: 
                 reward = -1 
                 

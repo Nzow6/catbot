@@ -77,4 +77,6 @@ def play_q_table(env, q_table, move_delay=0.25, max_steps=1000, window_title=Non
     env.render()
     time.sleep(1)
     env.close()
+    if moves < max_steps:
+        print(f"Caught in {moves} moves")
     return terminated

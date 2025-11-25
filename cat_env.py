@@ -334,7 +334,7 @@ class AngryCat(Cat):
         else:
             self.rage_meter = 0
             return 
-        print(f"rage is: {self.rage_meter}")
+        #print(f"rage is: {self.rage_meter}")
 
         safe_positions = []
 
