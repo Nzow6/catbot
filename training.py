@@ -54,7 +54,7 @@ def train_bot(cat_name, render: int = -1):
 
     epsilon_decay = 0.992 # decreasing rate of epsilon
     min_epsilon = 0.05 # minimum exploration rate 
-    max_steps = 60 # max steps per episode cos the bot might not reach the cat at all
+    max_steps = 1000 # max steps per episode cos the bot might not reach the cat at all
 
     outcomes = [] #idk how to use this yet pero nandito na to kanina so di ko na tinanggal
     
