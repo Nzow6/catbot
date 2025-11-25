@@ -20,20 +20,20 @@ def main():
     count = 0
     while count <10:
         count+=1
-        print(f"Iteration {count}")
+        print(f"\n\nIteration {count}")
 
-        print(f"\nTraining agent against {args.cat} cat...")
+        #print(f"\nTraining agent against {args.cat} cat...")
         q_table = train_bot(
             cat_name=args.cat,
             render=args.render
         )
         
-        print("\nTraining complete! Starting game with trained bot...")
-        print("Press Q to quit.")
+        #print("\nTraining complete! Starting game with trained bot...")
+        #print("Press Q to quit.")
         
         # Play using the trained Q-table
         env = make_env(cat_type=args.cat)
-        caught = play_q_table(env, q_table, max_steps=60, window_title='Cat Chase - Final Trained Bot')
+        caught = play_q_table(env, q_table, max_steps=60, window_title='Cat Chase - Final Trained Bot',move_delay=0.02)
 
         if caught:
             print("The bot successfully caught the cat!")
