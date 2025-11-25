@@ -137,6 +137,6 @@ def train_bot(cat_name, render: int = -1):
         if render != -1 and (ep == 1 or ep % render == 0):
             viz_env = make_env(cat_type=cat_name)
             play_q_table(viz_env, q_table, max_steps=100, move_delay=0.02, window_title=f"{cat_name}: Training Episode {ep}/{episodes}")
-            print('episode', ep)
+            #print('episode', ep)
 
     return q_table

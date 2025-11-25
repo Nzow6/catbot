@@ -610,7 +610,7 @@ class CatChaseEnv(gym.Env):
                 self.agent_sprite = pygame.image.load(agent_img_path)
                 self.agent_sprite = self.agent_sprite.convert_alpha()
                 self.agent_sprite = pygame.transform.scale(self.agent_sprite, (self.tile_size, self.tile_size))
-                print(f"Successfully loaded agent sprite: {agent_img_path}")
+                #print(f"Successfully loaded agent sprite: {agent_img_path}")
             except Exception as e:
                 print(f"Error loading agent sprite {agent_img_path}: {str(e)}")
                 self.agent_sprite = pygame.Surface((self.tile_size, self.tile_size))
