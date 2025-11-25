@@ -55,7 +55,7 @@ def train_bot(cat_name, render: int = -1):
     alpha_min = 0.4
     alpha_decay = 0.995
     gamma = 0.9 # discount factor
-    # max_steps = 60  max steps per episode cos the bot might not reach the cat at all
+    max_steps = 1000  # max steps per episode cos the bot might not reach the cat at all
     tau = 2.0
     tau_decay = 0.995
     min_tau = 0.01
@@ -78,6 +78,7 @@ def train_bot(cat_name, render: int = -1):
         # 5. Update the Q-table accordingly based on agent's rewards.                #
         ############################################################################## 
         state, _ = env.reset()
+        steps = 0
         
         total_rewards = 0
         done = False
@@ -86,8 +87,8 @@ def train_bot(cat_name, render: int = -1):
         action = np.random.choice(env.action_space.n, p=probabilities)
 
         #softmax selection
-        while not done:
-                
+        while not done and steps < max_steps:
+            steps += 1
             next_state, reward, terminated, truncated, info = env.step(action) # perform action
             
             bot_pos = next_state // 100
