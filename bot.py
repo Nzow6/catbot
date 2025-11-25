@@ -18,7 +18,7 @@ def main():
     
     # Train the agent
     count = 0
-    while count <30:
+    while count <100:
         count+=1
         #print(f"\n\nIteration {count}")
 
@@ -33,7 +33,7 @@ def main():
         
         # Play using the trained Q-table
         env = make_env(cat_type=args.cat)
-        caught,moves = play_q_table(env, q_table, max_steps=60, window_title='Cat Chase - Final Trained Bot',move_delay=0.02)
+        caught,moves = play_q_table(env, q_table, max_steps=60, window_title='Cat Chase - Final Trained Bot',move_delay=0.00)
 
         if caught:
             print(f"The bot successfully caught the cat! ||| {moves}")
