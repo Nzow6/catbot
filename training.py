@@ -65,7 +65,7 @@ def train_bot(cat_name, render: int = -1):
     #############################################################################
     # END OF YOUR CODE. DO NOT MODIFY ANYTHING BEYOND THIS LINE.                #
     #############################################################################
-    
+    start_time = time.perf_counter()
     for ep in range(1, episodes + 1):
         ##############################################################################
         # TODO: IMPLEMENT THE Q-LEARNING TRAINING LOOP HERE.                         #
@@ -121,8 +121,13 @@ def train_bot(cat_name, render: int = -1):
                 action = next_action
             else:
                 q_table[state][action] += alpha_start * (reward - q_table[state][action])
+
+            #print(f"time: {(time.perf_counter() - start_time) :.4f}")
+            if time.perf_counter() - start_time > 20.00:
+                done = True
+        #print(steps)
             
-                
+        end_time = time.perf_counter()
         # decrease tau and alpha
         alpha_start = max(alpha_min, alpha_start * alpha_decay)
         tau = max(min_tau, tau * tau_decay)
@@ -136,5 +141,5 @@ def train_bot(cat_name, render: int = -1):
             viz_env = make_env(cat_type=cat_name)
             play_q_table(viz_env, q_table, max_steps=100, move_delay=0.00, window_title=f"{cat_name}: Training Episode {ep}/{episodes}")
             #print('episode', ep)
-
-    return q_table
+        
+    return q_table , end_time - start_time
