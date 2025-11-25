@@ -46,10 +46,10 @@ def train_bot(cat_name, render: int = -1):
 
     # best epsilon = 1.0 up to 0.1
     #Default values for now
-    alpha_start = 0.5
-    #alpha_min = 0.2
-    #alpha_decay = 0.999
-    gamma = 0.95 # discount factor
+    alpha_start = 0.7
+    alpha_min = 0.4
+    alpha_decay = 0.995
+    gamma = 0.9 # discount factor
     epsilon = 1.0 # randomness of exploration
 
     epsilon_decay = 0.992 # decreasing rate of epsilon
@@ -127,7 +127,7 @@ def train_bot(cat_name, render: int = -1):
                 
         # decrease epsilon and alpha
         epsilon = max(min_epsilon, epsilon * epsilon_decay)
-        #alpha_start = max(alpha_min, alpha_start * alpha_decay)
+        alpha_start = max(alpha_min, alpha_start * alpha_decay)
 
         #############################################################################
         # END OF YOUR CODE. DO NOT MODIFY ANYTHING BEYOND THIS LINE.                #
