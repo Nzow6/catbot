@@ -37,7 +37,6 @@ def main():
 
         if caught:
             print(f"The bot successfully caught the cat! ||| {moves} ||| {time}")
-            #print(f"The bot successfully caught the cat! ||| {moves} ||| {time}")
         else:
             print("The bot failed to catch the cat this time.")
     

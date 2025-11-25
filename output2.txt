@@ -1,0 +1,11 @@
+
+CURRENT CAT: STALKER
+
+The bot successfully caught the cat! ||| 13 ||| 8.533429799999794
+The bot successfully caught the cat! ||| 13 ||| 8.920286500000657
+The bot successfully caught the cat! ||| 14 ||| 9.584661399998367
+The bot successfully caught the cat! ||| 12 ||| 8.668308100001013
+The bot successfully caught the cat! ||| 13 ||| 9.911193299998558
+The bot successfully caught the cat! ||| 11 ||| 8.615937099999428
+The bot successfully caught the cat! ||| 27 ||| 8.476187399999617
+The bot successfully caught the cat! ||| 17 ||| 8.384837499999776

@@ -1,0 +1,15 @@
+
+CURRENT CAT: BATMEOW
+
+The bot successfully caught the cat! ||| 14 ||| 6.194924600000377
+The bot successfully caught the cat! ||| 14 ||| 6.31787119999899
+The bot successfully caught the cat! ||| 14 ||| 6.425570999999763
+The bot successfully caught the cat! ||| 14 ||| 6.259434100000362
+The bot successfully caught the cat! ||| 14 ||| 7.28213279999909
+The bot successfully caught the cat! ||| 14 ||| 6.552670700000817
+The bot successfully caught the cat! ||| 14 ||| 6.815337500000169
+The bot successfully caught the cat! ||| 14 ||| 7.355376700001216
+The bot successfully caught the cat! ||| 14 ||| 6.426859799999875
+The bot successfully caught the cat! ||| 14 ||| 6.223611600000368
+The bot successfully caught the cat! ||| 14 ||| 6.159408900000926
+The bot successfully caught the cat! ||| 14 ||| 6.246180000000095
