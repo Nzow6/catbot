@@ -513,6 +513,8 @@ class TrainerCat(Cat):
     Helper methods:
     - self.player_moved_closer(): Returns True if player's last move decreased distance
     """
+    move_count = 10
+    current_self = ""
     def _get_sprite_path(self) -> str:
         return "images/trainer-dp.png"
     
@@ -524,6 +526,48 @@ class TrainerCat(Cat):
         # 2. Check distances
         # 3. Implement your own movement strategy
         # 4. Test different learning algorithms
+
+        if self.move_count < 5:
+            self.move_count+=1
+            self.current_self.move(self)
+            return
+        self.move_count = 0
+        choices = {
+            "batmeow",
+            "mittens",
+            "paotsin",
+            "peekaboo",
+            "squiddyboi",
+            "ryan",
+            "copy" ,
+            "stalker",
+            "trainer"
+        }
+
+        choices = list(choices)
+
+        cat_types = {
+            "batmeow": BatmeowCat,          
+            "mittens": MittensCat,
+            "paotsin": PaotsinCat,
+            "peekaboo": PeekabooCat,
+            "squiddyboi": SquiddyboiCat,
+            "ryan": RyanCat,
+            "angry": AngryCat,
+            "shy" : ShyCat,
+            "copy" : CopyCat,
+            "stalker" : StalkerCat,
+            "trainer": TrainerCat,
+            "dustine": DustineCat
+        }
+        select = random.choice(choices)
+        #print(select)
+        self.current_self = cat_types[select]
+        self.current_self.move(self)
+
+        #ShyCat.move(self)
+
+        
         return
 
 #######################################
@@ -531,6 +575,7 @@ class TrainerCat(Cat):
 #######################################
 
 class CatChaseEnv(gym.Env):
+
     """Simple 8x8 grid world where an agent tries to catch a randomly moving cat.
 
     Observation: Dict with 'agent' and 'cat' positions as (row, col) each in [0..7].
