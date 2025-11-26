@@ -572,7 +572,126 @@ class DiagonalCat(Cat):
         self.pos[0] = new_pos[0]
         self.pos[1] = new_pos[1]
         return
+    
+class PathfinderCat(Cat):
+    def _get_sprite_path(self) -> str:
+        return "images/pathfinder-dp.png"  # Add a sprite or fallback to default
 
+    def move(self) -> None:
+        from collections import deque
+
+        visited = set()
+        queue = deque()
+        queue.append((self.pos[0], self.pos[1], 0))
+        visited.add((self.pos[0], self.pos[1]))
+
+        best_pos = self.pos.copy()
+        best_dist = self.current_distance
+
+        while queue:
+            r, c, steps = queue.popleft()
+            distance = abs(r - self.player_pos[0]) + abs(c - self.player_pos[1])
+            if distance > best_dist:
+                best_dist = distance
+                best_pos = [r, c]
+
+            for dr, dc in [(-1,0), (1,0), (0,-1), (0,1)]:
+                nr, nc = r + dr, c + dc
+                if 0 <= nr < self.grid_size and 0 <= nc < self.grid_size and (nr, nc) not in visited:
+                    visited.add((nr, nc))
+                    queue.append((nr, nc, steps + 1))
+
+        self.pos = np.array(best_pos, dtype=np.int32)
+
+class EchoCat(Cat):
+    def _get_sprite_path(self) -> str:
+        return "images/echo-dp.png"  # Optional sprite
+
+    def __init__(self, grid_size: int, tile_size: int):
+        super().__init__(grid_size, tile_size)
+        self.player_move_history = []
+
+    def move(self) -> None:
+        if self.last_player_action is not None:
+            self.player_move_history.append(self.last_player_action)
+            if len(self.player_move_history) > 2:
+                self.player_move_history.pop(0)
+
+        if len(self.player_move_history) == 0:
+            return  # Stay still
+
+        direction_map = {
+            0: (1, 0),   # Player moved up, cat moves down
+            1: (-1, 0),  # Player moved down, cat moves up
+            2: (0, 1),   # Player moved left, cat moves right
+            3: (0, -1),  # Player moved right, cat moves left
+        }
+
+        for action in reversed(self.player_move_history):
+            if action in direction_map:
+                dr, dc = direction_map[action]
+                new_r = min(max(0, self.pos[0] + dr), self.grid_size - 1)
+                new_c = min(max(0, self.pos[1] + dc), self.grid_size - 1)
+                self.pos = np.array([new_r, new_c], dtype=np.int32)
+                return
+
+class ChaosCat(Cat):
+    def _get_sprite_path(self) -> str:
+        return "images/chaos-dp.png"
+
+    def __init__(self, grid_size: int, tile_size: int):
+        super().__init__(grid_size, tile_size)
+        self.counter = 0
+        self.behaviors = [
+            MittensCat(grid_size, tile_size),
+            RyanCat(grid_size, tile_size),
+            PaotsinCat(grid_size, tile_size),
+            CopyCat(grid_size, tile_size),
+            PathfinderCat(grid_size, tile_size),
+            EchoCat(grid_size, tile_size)
+        ]
+        self.current_behavior = random.choice(self.behaviors)
+        self.current_behavior.pos = self.pos.copy()
+
+    def move(self) -> None:
+        self.counter += 1
+        if self.counter % 4 == 0:
+            self.current_behavior = random.choice(self.behaviors)
+            self.current_behavior.pos = self.pos.copy()
+
+        self.current_behavior.update_player_info(self.player_pos, self.last_player_action)
+        self.current_behavior.move()
+        self.pos = self.current_behavior.pos.copy()
+
+class HunterCat(Cat):
+    def _get_sprite_path(self) -> str:
+        return "images/hunter-dp.jpg"  # Use an existing or placeholder sprite
+
+    def move(self) -> None:
+        distance = abs(self.pos[0] - self.player_pos[0]) + abs(self.pos[1] - self.player_pos[1])
+        
+        # Direction vectors
+        directions = [(-1,0), (1,0), (0,-1), (0,1)]
+        best_move = self.pos.copy()
+        best_score = -float('inf') if distance <= 4 else float('inf')
+
+        for dr, dc in directions:
+            new_r = self.pos[0] + dr
+            new_c = self.pos[1] + dc
+            if 0 <= new_r < self.grid_size and 0 <= new_c < self.grid_size:
+                new_dist = abs(new_r - self.player_pos[0]) + abs(new_c - self.player_pos[1])
+                # Flee if too close
+                if distance <= 4:
+                    if new_dist > best_score:
+                        best_score = new_dist
+                        best_move = (new_r, new_c)
+                # Chase if far
+                else:
+                    if new_dist < best_score:
+                        best_score = new_dist
+                        best_move = (new_r, new_c)
+
+        self.pos[0], self.pos[1] = best_move
 
 class TrainerCat(Cat):
     """A customizable cat for students to implement and test their own behavior algorithms.
@@ -617,7 +736,7 @@ class TrainerCat(Cat):
             "ryan",
             "copy" ,
             "stalker",
-            "trainer"
+            "trainer",
         }
 
         choices = list(choices)
@@ -634,7 +753,12 @@ class TrainerCat(Cat):
             "copy" : CopyCat,
             "stalker" : StalkerCat,
             "trainer": TrainerCat,
-            "dustine": DustineCat
+            "dustine": DustineCat,
+            "pathfinder": PathfinderCat,
+            "echo": EchoCat,
+            "chaos": ChaosCat,
+            "hunter": HunterCat,
+
         }
         select = random.choice(choices)
         #print(select)
@@ -705,7 +829,12 @@ class CatChaseEnv(gym.Env):
             "stalker" : StalkerCat,
             "trainer": TrainerCat,
             "dustine": DustineCat,
-            "diagonal": DiagonalCat
+            "diagonal": DiagonalCat,
+            "pathfinder": PathfinderCat,
+            "echo": EchoCat,
+            "chaos": ChaosCat,
+            "hunter": HunterCat
+
         }
         if cat_type not in cat_types:
             raise ValueError(f"Unknown cat type: {cat_type}. Available types: {list(cat_types.keys())}")
