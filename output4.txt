@@ -1,0 +1,476 @@
+
+CURRENT CAT: MITTENS
+
+The bot successfully caught the cat! ||| 11 ||| 8.554080699999759
+The bot successfully caught the cat! ||| 10 ||| 8.462551900000108
+The bot successfully caught the cat! ||| 24 ||| 8.400486499998806
+The bot successfully caught the cat! ||| 9 ||| 8.480016099998466
+The bot successfully caught the cat! ||| 10 ||| 8.61192839999785
+The bot successfully caught the cat! ||| 14 ||| 8.513045200001216
+The bot successfully caught the cat! ||| 21 ||| 8.52385460000005
+The bot successfully caught the cat! ||| 20 ||| 8.499268200001097
+The bot successfully caught the cat! ||| 12 ||| 8.405819600000541
+The bot successfully caught the cat! ||| 10 ||| 8.318353099999513
+The bot successfully caught the cat! ||| 14 ||| 8.538740799998777
+The bot successfully caught the cat! ||| 12 ||| 8.343500400002085
+The bot successfully caught the cat! ||| 11 ||| 8.575138000000152
+The bot successfully caught the cat! ||| 32 ||| 8.340004199999385
+The bot successfully caught the cat! ||| 13 ||| 8.37079359999916
+The bot successfully caught the cat! ||| 16 ||| 8.428503900002397
+The bot successfully caught the cat! ||| 23 ||| 8.44200009999986
+The bot successfully caught the cat! ||| 10 ||| 8.540303300000232
+The bot successfully caught the cat! ||| 11 ||| 8.500627099998383
+The bot successfully caught the cat! ||| 12 ||| 8.393010799998592
+The bot successfully caught the cat! ||| 11 ||| 8.390477400000236
+The bot successfully caught the cat! ||| 11 ||| 8.537790500002302
+The bot successfully caught the cat! ||| 9 ||| 8.410444900000584
+The bot successfully caught the cat! ||| 12 ||| 8.356212599999708
+The bot successfully caught the cat! ||| 17 ||| 8.32414869999775
+
+CURRENT CAT: BATMEOW
+
+The bot successfully caught the cat! ||| 14 ||| 5.2423627999996825
+The bot successfully caught the cat! ||| 14 ||| 5.273002699999779
+The bot successfully caught the cat! ||| 14 ||| 5.2476982999978645
+The bot successfully caught the cat! ||| 14 ||| 5.241855899999791
+The bot successfully caught the cat! ||| 14 ||| 5.252252800000861
+The bot successfully caught the cat! ||| 14 ||| 5.210734700001922
+The bot successfully caught the cat! ||| 14 ||| 5.267549899999722
+The bot successfully caught the cat! ||| 14 ||| 5.240397699999448
+The bot successfully caught the cat! ||| 14 ||| 5.232309899998654
+The bot successfully caught the cat! ||| 14 ||| 5.227978000002622
+The bot successfully caught the cat! ||| 14 ||| 5.253926599998522
+The bot successfully caught the cat! ||| 14 ||| 5.189539799997874
+The bot successfully caught the cat! ||| 14 ||| 5.272635200002696
+The bot successfully caught the cat! ||| 14 ||| 5.23795550000068
+The bot successfully caught the cat! ||| 14 ||| 5.26286429999891
+The bot successfully caught the cat! ||| 14 ||| 5.223454799997853
+The bot successfully caught the cat! ||| 14 ||| 5.244697300000553
+The bot successfully caught the cat! ||| 14 ||| 5.298827800001163
+The bot successfully caught the cat! ||| 14 ||| 5.247302199997648
+The bot successfully caught the cat! ||| 14 ||| 5.249077500000567
+The bot successfully caught the cat! ||| 14 ||| 5.22187649999978
+The bot successfully caught the cat! ||| 14 ||| 5.220211100000597
+The bot successfully caught the cat! ||| 14 ||| 5.264220700002625
+The bot successfully caught the cat! ||| 14 ||| 5.23877469999934
+The bot successfully caught the cat! ||| 14 ||| 5.219722999998339
+
+CURRENT CAT: PAOTSIN
+
+The bot successfully caught the cat! ||| 15 ||| 17.13214969999899
+The bot successfully caught the cat! ||| 22 ||| 17.83199109999987
+The bot successfully caught the cat! ||| 17 ||| 16.654354300000705
+The bot successfully caught the cat! ||| 17 ||| 16.80938790000073
+The bot successfully caught the cat! ||| 15 ||| 17.215898200000083
+The bot successfully caught the cat! ||| 12 ||| 16.76191359999939
+The bot successfully caught the cat! ||| 15 ||| 17.334851799998432
+The bot successfully caught the cat! ||| 15 ||| 17.13719470000069
+The bot successfully caught the cat! ||| 15 ||| 16.445885900000576
+The bot successfully caught the cat! ||| 16 ||| 16.90251840000201
+The bot successfully caught the cat! ||| 15 ||| 17.39652080000087
+The bot successfully caught the cat! ||| 15 ||| 16.695692200002668
+The bot successfully caught the cat! ||| 16 ||| 17.36142309999923
+The bot successfully caught the cat! ||| 16 ||| 17.52893849999964
+The bot successfully caught the cat! ||| 15 ||| 17.643991200002347
+The bot successfully caught the cat! ||| 41 ||| 16.969742599998426
+The bot successfully caught the cat! ||| 19 ||| 17.137349699998595
+The bot successfully caught the cat! ||| 16 ||| 17.269593900000473
+The bot successfully caught the cat! ||| 22 ||| 17.555882200002088
+The bot successfully caught the cat! ||| 50 ||| 17.606643399998575
+The bot successfully caught the cat! ||| 15 ||| 17.87787489999755
+The bot successfully caught the cat! ||| 16 ||| 17.157934299997578
+The bot successfully caught the cat! ||| 15 ||| 17.036672700000054
+The bot successfully caught the cat! ||| 17 ||| 17.37001869999949
+The bot successfully caught the cat! ||| 16 ||| 17.266836999999214
+
+CURRENT CAT: PEEKABOO
+
+The bot successfully caught the cat! ||| 24 ||| 15.368995500000892
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 27 ||| 15.29815199999939
+The bot successfully caught the cat! ||| 27 ||| 15.220415299998422
+The bot successfully caught the cat! ||| 26 ||| 15.335987999998906
+The bot successfully caught the cat! ||| 21 ||| 15.424525100002938
+The bot successfully caught the cat! ||| 21 ||| 15.41721829999733
+The bot successfully caught the cat! ||| 24 ||| 15.401219100000162
+The bot successfully caught the cat! ||| 25 ||| 15.264887299999828
+The bot successfully caught the cat! ||| 25 ||| 15.30561730000045
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 25 ||| 15.485687899999903
+The bot successfully caught the cat! ||| 26 ||| 15.28285539999706
+The bot successfully caught the cat! ||| 24 ||| 15.577553800001624
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 26 ||| 15.473225099998672
+The bot successfully caught the cat! ||| 60 ||| 15.16197149999789
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 25 ||| 15.192136199999368
+The bot successfully caught the cat! ||| 26 ||| 15.354526499999338
+The bot successfully caught the cat! ||| 25 ||| 15.239937700000155
+The bot successfully caught the cat! ||| 28 ||| 15.55577600000106
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 33 ||| 15.256458500000008
+
+CURRENT CAT: SQUIDDYBOI
+
+The bot successfully caught the cat! ||| 13 ||| 20.0497131000011
+The bot successfully caught the cat! ||| 28 ||| 20.036491200000455
+The bot successfully caught the cat! ||| 28 ||| 20.046045799997955
+The bot successfully caught the cat! ||| 17 ||| 20.047063699999853
+The bot successfully caught the cat! ||| 18 ||| 20.042398800000228
+The bot successfully caught the cat! ||| 39 ||| 20.04802220000056
+The bot successfully caught the cat! ||| 16 ||| 20.053521500001807
+The bot successfully caught the cat! ||| 19 ||| 20.055194699998538
+The bot successfully caught the cat! ||| 16 ||| 20.040442900000926
+The bot successfully caught the cat! ||| 19 ||| 20.048216300001513
+The bot successfully caught the cat! ||| 43 ||| 20.041186300000845
+The bot successfully caught the cat! ||| 46 ||| 20.05077259999962
+The bot successfully caught the cat! ||| 18 ||| 20.04864979999911
+The bot successfully caught the cat! ||| 24 ||| 20.036341699997138
+The bot successfully caught the cat! ||| 19 ||| 20.051880600000004
+The bot successfully caught the cat! ||| 26 ||| 20.05339869999807
+The bot successfully caught the cat! ||| 16 ||| 20.040257100001327
+The bot successfully caught the cat! ||| 20 ||| 20.043316199997207
+The bot successfully caught the cat! ||| 30 ||| 20.04104780000125
+The bot successfully caught the cat! ||| 25 ||| 20.04634520000036
+The bot successfully caught the cat! ||| 16 ||| 20.039447300001484
+The bot successfully caught the cat! ||| 18 ||| 20.0524347999999
+The bot successfully caught the cat! ||| 24 ||| 20.04023589999997
+The bot successfully caught the cat! ||| 17 ||| 20.052353900002345
+The bot successfully caught the cat! ||| 18 ||| 20.055014500001562
+
+CURRENT CAT: TRAINER
+
+The bot successfully caught the cat! ||| 56 ||| 20.044228900002054
+The bot successfully caught the cat! ||| 58 ||| 20.04493629999706
+The bot successfully caught the cat! ||| 14 ||| 20.034383100002742
+The bot successfully caught the cat! ||| 50 ||| 20.053334000000177
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 26 ||| 20.040813299998263
+The bot successfully caught the cat! ||| 23 ||| 20.042055900001287
+The bot successfully caught the cat! ||| 15 ||| 20.046434300002147
+The bot successfully caught the cat! ||| 57 ||| 20.04801899999802
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 16 ||| 20.04247590000159
+The bot successfully caught the cat! ||| 26 ||| 20.03267229999983
+The bot successfully caught the cat! ||| 16 ||| 20.0461071000027
+The bot successfully caught the cat! ||| 24 ||| 20.042476599999645
+The bot successfully caught the cat! ||| 10 ||| 20.044929499999853
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 59 ||| 20.037261199999193
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 15 ||| 20.059594500002277
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 11 ||| 20.038622000000032
+The bot successfully caught the cat! ||| 27 ||| 20.04307289999997
+The bot successfully caught the cat! ||| 40 ||| 20.042356700003438
+
+CURRENT CAT: RYAN
+
+The bot successfully caught the cat! ||| 22 ||| 18.795041400000628
+The bot successfully caught the cat! ||| 14 ||| 18.73021670000162
+The bot successfully caught the cat! ||| 24 ||| 18.725792000001093
+The bot successfully caught the cat! ||| 20 ||| 18.55560020000121
+The bot successfully caught the cat! ||| 13 ||| 18.726756300002307
+The bot successfully caught the cat! ||| 22 ||| 18.86803409999993
+The bot successfully caught the cat! ||| 16 ||| 18.743752600003063
+The bot successfully caught the cat! ||| 24 ||| 18.708546199999546
+The bot successfully caught the cat! ||| 16 ||| 18.789664600000833
+The bot successfully caught the cat! ||| 15 ||| 18.65233189999708
+The bot successfully caught the cat! ||| 19 ||| 18.80853120000029
+The bot successfully caught the cat! ||| 22 ||| 18.73602970000138
+The bot successfully caught the cat! ||| 29 ||| 18.626360499998555
+The bot successfully caught the cat! ||| 14 ||| 18.736476300000504
+The bot successfully caught the cat! ||| 23 ||| 18.660161899999366
+The bot successfully caught the cat! ||| 24 ||| 18.635229799998342
+The bot successfully caught the cat! ||| 38 ||| 18.65020060000097
+The bot successfully caught the cat! ||| 24 ||| 18.75626420000117
+The bot successfully caught the cat! ||| 22 ||| 18.55508760000157
+The bot successfully caught the cat! ||| 15 ||| 18.780159199999616
+The bot successfully caught the cat! ||| 13 ||| 18.621290099999896
+The bot successfully caught the cat! ||| 14 ||| 18.715186800000083
+The bot successfully caught the cat! ||| 26 ||| 18.708003399999143
+The bot successfully caught the cat! ||| 25 ||| 18.811305100000027
+The bot successfully caught the cat! ||| 17 ||| 18.633046499999182
+
+CURRENT CAT: ANGRY
+
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+
+CURRENT CAT: SHY
+
+The bot successfully caught the cat! ||| 14 ||| 6.904536300000473
+The bot successfully caught the cat! ||| 14 ||| 7.074492599997029
+The bot successfully caught the cat! ||| 14 ||| 6.9213082999995095
+The bot successfully caught the cat! ||| 14 ||| 7.006500700001197
+The bot successfully caught the cat! ||| 14 ||| 7.006739200001903
+The bot successfully caught the cat! ||| 14 ||| 6.8457400999977835
+The bot successfully caught the cat! ||| 14 ||| 6.895398000000569
+The bot successfully caught the cat! ||| 14 ||| 6.8673292999992555
+The bot successfully caught the cat! ||| 14 ||| 6.673026899999968
+The bot successfully caught the cat! ||| 14 ||| 6.850673900000402
+The bot successfully caught the cat! ||| 14 ||| 7.045103699998435
+The bot successfully caught the cat! ||| 14 ||| 6.833219399999507
+The bot successfully caught the cat! ||| 14 ||| 7.038610299998254
+The bot successfully caught the cat! ||| 14 ||| 6.853922199999943
+The bot successfully caught the cat! ||| 14 ||| 6.909699299998465
+The bot successfully caught the cat! ||| 14 ||| 6.8790377999976045
+The bot successfully caught the cat! ||| 14 ||| 6.928119299998798
+The bot successfully caught the cat! ||| 14 ||| 6.725998699999764
+The bot successfully caught the cat! ||| 14 ||| 6.971509799997875
+The bot successfully caught the cat! ||| 14 ||| 6.989621599997918
+The bot successfully caught the cat! ||| 14 ||| 6.843286599996645
+The bot successfully caught the cat! ||| 14 ||| 6.910932700000558
+The bot successfully caught the cat! ||| 14 ||| 6.806737599999906
+The bot successfully caught the cat! ||| 14 ||| 6.891399700001784
+The bot successfully caught the cat! ||| 14 ||| 6.940560099999857
+
+CURRENT CAT: COPY
+
+The bot successfully caught the cat! ||| 9 ||| 7.264420300001802
+The bot successfully caught the cat! ||| 9 ||| 7.236813599996822
+The bot successfully caught the cat! ||| 9 ||| 7.3735760999989
+The bot successfully caught the cat! ||| 9 ||| 7.376217799999722
+The bot successfully caught the cat! ||| 9 ||| 7.293400200000178
+The bot successfully caught the cat! ||| 9 ||| 7.2947204999982205
+The bot successfully caught the cat! ||| 9 ||| 7.26893029999701
+The bot successfully caught the cat! ||| 9 ||| 7.364801600000646
+The bot successfully caught the cat! ||| 9 ||| 7.42046019999907
+The bot successfully caught the cat! ||| 9 ||| 7.20064320000165
+The bot successfully caught the cat! ||| 9 ||| 7.35700050000014
+The bot successfully caught the cat! ||| 9 ||| 7.466729900002974
+The bot successfully caught the cat! ||| 9 ||| 7.216061400002218
+The bot successfully caught the cat! ||| 9 ||| 7.316338900000119
+The bot successfully caught the cat! ||| 9 ||| 7.268988200001331
+The bot successfully caught the cat! ||| 9 ||| 7.278211500000907
+The bot successfully caught the cat! ||| 9 ||| 7.498794099999941
+The bot successfully caught the cat! ||| 9 ||| 7.369366300001275
+The bot successfully caught the cat! ||| 9 ||| 7.40798850000283
+The bot successfully caught the cat! ||| 9 ||| 7.369410499999503
+The bot successfully caught the cat! ||| 9 ||| 7.191587899997103
+The bot successfully caught the cat! ||| 9 ||| 7.244497299998329
+The bot successfully caught the cat! ||| 9 ||| 7.228625500003545
+The bot successfully caught the cat! ||| 9 ||| 7.5354489000019385
+The bot successfully caught the cat! ||| 9 ||| 7.219056300000375
+
+CURRENT CAT: DUSTINE
+
+The bot successfully caught the cat! ||| 12 ||| 14.235988600001292
+The bot successfully caught the cat! ||| 12 ||| 13.827098400000978
+The bot successfully caught the cat! ||| 12 ||| 13.286177300000418
+The bot successfully caught the cat! ||| 12 ||| 14.126642399998673
+The bot successfully caught the cat! ||| 12 ||| 14.21202059999996
+The bot successfully caught the cat! ||| 12 ||| 12.979606400000193
+The bot successfully caught the cat! ||| 12 ||| 13.313505000001896
+The bot successfully caught the cat! ||| 12 ||| 13.777485700000398
+The bot successfully caught the cat! ||| 12 ||| 13.71488809999937
+The bot successfully caught the cat! ||| 12 ||| 13.880311299999448
+The bot successfully caught the cat! ||| 12 ||| 13.418970000002446
+The bot successfully caught the cat! ||| 12 ||| 14.014419700000872
+The bot successfully caught the cat! ||| 12 ||| 13.605813999998645
+The bot successfully caught the cat! ||| 12 ||| 14.027686199999152
+The bot successfully caught the cat! ||| 12 ||| 14.081247899997834
+The bot successfully caught the cat! ||| 12 ||| 14.36405790000208
+The bot successfully caught the cat! ||| 12 ||| 13.900996000000305
+The bot successfully caught the cat! ||| 12 ||| 13.669492299999547
+The bot successfully caught the cat! ||| 12 ||| 13.848753700000088
+The bot successfully caught the cat! ||| 12 ||| 13.355909100002464
+The bot successfully caught the cat! ||| 12 ||| 13.43705989999944
+The bot successfully caught the cat! ||| 12 ||| 13.364182500001334
+The bot successfully caught the cat! ||| 12 ||| 14.279480400000466
+The bot successfully caught the cat! ||| 12 ||| 13.575831800000742
+The bot successfully caught the cat! ||| 12 ||| 13.25031730000046
+
+CURRENT CAT: STALKER
+
+The bot successfully caught the cat! ||| 15 ||| 6.951557099997444
+The bot successfully caught the cat! ||| 18 ||| 7.3042169000000285
+The bot successfully caught the cat! ||| 37 ||| 7.166036299997359
+The bot successfully caught the cat! ||| 16 ||| 7.217075100001239
+The bot successfully caught the cat! ||| 27 ||| 7.120846300000267
+The bot successfully caught the cat! ||| 12 ||| 7.161322400002973
+The bot successfully caught the cat! ||| 10 ||| 7.381399099998816
+The bot successfully caught the cat! ||| 12 ||| 7.061176300001534
+The bot successfully caught the cat! ||| 11 ||| 7.298412500000268
+The bot successfully caught the cat! ||| 41 ||| 7.098646200000076
+The bot successfully caught the cat! ||| 15 ||| 7.187737999996898
+The bot successfully caught the cat! ||| 15 ||| 6.991554399999586
+The bot successfully caught the cat! ||| 13 ||| 7.198815700001433
+The bot successfully caught the cat! ||| 12 ||| 7.081907200001297
+The bot successfully caught the cat! ||| 11 ||| 7.097182199999224
+The bot successfully caught the cat! ||| 13 ||| 7.207651400000032
+The bot successfully caught the cat! ||| 15 ||| 7.127273099999002
+The bot successfully caught the cat! ||| 10 ||| 7.026853600000322
+The bot successfully caught the cat! ||| 15 ||| 7.135004699997808
+The bot successfully caught the cat! ||| 20 ||| 7.166534900003171
+The bot successfully caught the cat! ||| 11 ||| 7.13968400000158
+The bot successfully caught the cat! ||| 12 ||| 7.283477699998912
+The bot successfully caught the cat! ||| 10 ||| 7.12087899999824
+The bot successfully caught the cat! ||| 10 ||| 7.084183799997845
+The bot successfully caught the cat! ||| 16 ||| 7.1745162999977765
+
+CURRENT CAT: DIAGONAL
+
+The bot successfully caught the cat! ||| 10 ||| 20.08163489999788
+The bot successfully caught the cat! ||| 14 ||| 20.0750380999998
+The bot successfully caught the cat! ||| 12 ||| 20.08884130000297
+The bot successfully caught the cat! ||| 13 ||| 20.088750800001435
+The bot successfully caught the cat! ||| 15 ||| 20.088277599999856
+The bot successfully caught the cat! ||| 12 ||| 20.077851900001406
+The bot successfully caught the cat! ||| 11 ||| 20.05318929999703
+The bot successfully caught the cat! ||| 11 ||| 20.055215899999894
+The bot successfully caught the cat! ||| 10 ||| 20.093600800002605
+The bot successfully caught the cat! ||| 25 ||| 20.071250100001635
+The bot successfully caught the cat! ||| 10 ||| 20.066460599999118
+The bot successfully caught the cat! ||| 13 ||| 20.088741800002026
+The bot successfully caught the cat! ||| 17 ||| 20.0553175999994
+The bot successfully caught the cat! ||| 8 ||| 20.09835789999852
+The bot successfully caught the cat! ||| 11 ||| 20.07698800000071
+The bot successfully caught the cat! ||| 10 ||| 20.067298400001164
+The bot successfully caught the cat! ||| 14 ||| 20.048340800000005
+The bot successfully caught the cat! ||| 22 ||| 20.061171999997896
+The bot successfully caught the cat! ||| 12 ||| 20.06810250000126
+The bot successfully caught the cat! ||| 10 ||| 20.06315739999991
+The bot successfully caught the cat! ||| 10 ||| 20.078398199999356
+The bot successfully caught the cat! ||| 11 ||| 20.062303700000484
+The bot successfully caught the cat! ||| 12 ||| 20.100703000000067
+The bot successfully caught the cat! ||| 12 ||| 20.096266199998354
+The bot successfully caught the cat! ||| 12 ||| 20.05187500000102
+
+CURRENT CAT: PATHFINDER
+
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+
+CURRENT CAT: ECHO
+
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+
+CURRENT CAT: CHAOS
+
+The bot successfully caught the cat! ||| 1 ||| 20.34020750000127
+The bot successfully caught the cat! ||| 2 ||| 20.32103189999907
+The bot successfully caught the cat! ||| 15 ||| 20.32414410000274
+The bot successfully caught the cat! ||| 1 ||| 20.33677760000137
+The bot successfully caught the cat! ||| 2 ||| 20.33603960000255
+The bot successfully caught the cat! ||| 1 ||| 20.328856500000256
+The bot successfully caught the cat! ||| 1 ||| 20.35798949999662
+The bot successfully caught the cat! ||| 7 ||| 20.333878400000685
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 2 ||| 20.31790419999743
+The bot successfully caught the cat! ||| 38 ||| 20.326122499998746
+The bot successfully caught the cat! ||| 1 ||| 20.33842029999869
+The bot failed to catch the cat this time.
+The bot failed to catch the cat this time.
+The bot successfully caught the cat! ||| 2 ||| 20.34343529999751
+The bot successfully caught the cat! ||| 1 ||| 20.353751299997384
+The bot successfully caught the cat! ||| 2 ||| 20.320872399999644
+The bot successfully caught the cat! ||| 1 ||| 20.33687529999952
+The bot successfully caught the cat! ||| 1 ||| 20.33208190000005
+The bot successfully caught the cat! ||| 1 ||| 20.315149099998962
+The bot successfully caught the cat! ||| 2 ||| 20.351704300002893
+The bot successfully caught the cat! ||| 1 ||| 20.334084599999187
+The bot successfully caught the cat! ||| 2 ||| 20.34166180000102
+The bot successfully caught the cat! ||| 2 ||| 20.332504099998914
+The bot failed to catch the cat this time.
+
+CURRENT CAT: HUNTER
+
+The bot successfully caught the cat! ||| 11 ||| 10.83385460000136
+The bot successfully caught the cat! ||| 11 ||| 11.218367800000124
+The bot successfully caught the cat! ||| 11 ||| 11.028213499997946
+The bot successfully caught the cat! ||| 11 ||| 10.68710160000046
+The bot successfully caught the cat! ||| 11 ||| 10.845326900001965
+The bot successfully caught the cat! ||| 11 ||| 10.911511400001473
+The bot successfully caught the cat! ||| 11 ||| 10.900520900002448
+The bot successfully caught the cat! ||| 11 ||| 10.737258699999074
+The bot successfully caught the cat! ||| 11 ||| 10.775889399999869
+The bot successfully caught the cat! ||| 11 ||| 10.674485999999888
+The bot successfully caught the cat! ||| 11 ||| 10.826589700001932
+The bot successfully caught the cat! ||| 11 ||| 10.715332600000693
+The bot successfully caught the cat! ||| 11 ||| 10.760942100001557
+The bot successfully caught the cat! ||| 11 ||| 11.06509780000124
+The bot successfully caught the cat! ||| 11 ||| 10.746085999999195
+The bot successfully caught the cat! ||| 11 ||| 11.010507900002267
+The bot successfully caught the cat! ||| 11 ||| 11.071711399999913
+The bot successfully caught the cat! ||| 11 ||| 11.007003200000327
+The bot successfully caught the cat! ||| 11 ||| 10.776882500002102
+The bot successfully caught the cat! ||| 11 ||| 11.10464890000003
+The bot successfully caught the cat! ||| 11 ||| 10.774860600002285
+The bot successfully caught the cat! ||| 11 ||| 10.801257899998745
+The bot successfully caught the cat! ||| 11 ||| 10.874137700000574
+The bot successfully caught the cat! ||| 11 ||| 10.796134100000927
+The bot successfully caught the cat! ||| 11 ||| 10.772752600001695
