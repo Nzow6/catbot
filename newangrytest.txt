@@ -1,0 +1,4 @@
+
+CURRENT CAT: HUNTER
+
+The bot successfully caught the cat! ||| 11 ||| 15.306252099999256

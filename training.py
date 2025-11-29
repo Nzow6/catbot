@@ -60,6 +60,11 @@ def train_bot(cat_name, render: int = -1):
     tau_decay = 0.995
     min_tau = 0.01
 
+    time_limit = 20.00
+    filename = "test"+ cat_name + ".txt"
+    with open(filename, 'w') as f:
+        print("",file=f)
+
     outcomes = [] #idk how to use this yet pero nandito na to kanina so di ko na tinanggal
     
     #############################################################################
@@ -86,6 +91,10 @@ def train_bot(cat_name, render: int = -1):
 
         #softmax selection
         while not done and steps < max_steps:
+            if time.perf_counter() - start_time > time_limit:
+                break
+
+
             steps += 1
             probabilities = softmax(q_table[state], tau)
             action = np.random.choice(env.action_space.n, p=probabilities)
@@ -123,10 +132,12 @@ def train_bot(cat_name, render: int = -1):
                 q_table[state][action] += alpha_start * (reward - q_table[state][action])
 
             #print(f"time: {(time.perf_counter() - start_time) :.4f}")
-            if time.perf_counter() - start_time > 20.00:
-                done = True
         #print(steps)
-            
+        with open(filename, 'a') as f:
+            if done:
+                print(f"{ep} | {steps}",file=f)
+            else: 
+                print(f"{ep} | {max_steps}",file=f)
         end_time = time.perf_counter()
         # decrease tau and alpha
         alpha_start = max(alpha_min, alpha_start * alpha_decay)

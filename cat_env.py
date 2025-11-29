@@ -326,28 +326,17 @@ class AngryCat(Cat):
     def _get_sprite_path(self) -> str:
         return "images/ryan-dp.png"
     def move(self) -> None:
-        from collections import deque
 
-        visited = set()
-        queue = deque()
-        queue.append((self.pos[0], self.pos[1], 0))
-        visited.add((self.pos[0], self.pos[1]))
+        best_pos = [0,0]
 
-        best_pos = self.pos.copy()
-        best_dist = self.current_distance
-
-        while queue:
-            r, c, steps = queue.popleft()
-            distance = abs(r - self.player_pos[0]) + abs(c - self.player_pos[1])
-            if distance > best_dist:
-                best_dist = distance
-                best_pos = [r, c]
-
-            for dr, dc in [(-1,0), (1,0), (0,-1), (0,1)]:
-                nr, nc = r + dr, c + dc
-                if 0 <= nr < self.grid_size and 0 <= nc < self.grid_size and (nr, nc) not in visited:
-                    visited.add((nr, nc))
-                    queue.append((nr, nc, steps + 1))
+        if self.player_pos[0] <=3:
+            best_pos[0] = self.grid_size-1
+        else:
+            best_pos[0] = 0
+        if self.player_pos[1] <=3:
+            best_pos[1] = self.grid_size-1
+        else:
+            best_pos[1] = 0
         
         if self.player_pos[0] !=self.prev_player_pos[0] or self.player_pos[1] !=self.prev_player_pos[1] :
             self.rage_meter+=1

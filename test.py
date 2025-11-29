@@ -16,17 +16,17 @@ def main():
     
     args = parser.parse_args()
 
-    choices=['mittens', 'batmeow', 'paotsin', 'peekaboo', 'squiddyboi', 'trainer',"ryan","angry","shy","copy","dustine","stalker","diagonal","pathfinder","echo","chaos","hunter"]
+    choices=['mittens', 'batmeow', 'paotsin', 'peekaboo', 'squiddyboi', 'trainer',"ryan","angry","shy","copy","dustine","stalker","diagonal","chaos","hunter"]
     #choices=['angry']
     
     #choices = reversed(choices)
     # Train the agent
     for cat in choices:
-        with open('newangrytest.txt', 'a') as f:
+        with open('newangrytest.txt', 'w') as f:
             print(f"\nCURRENT CAT: {cat.upper()}\n",file=f)
         print(f"\nCURRENT CAT: {cat.upper()}\n")
         count = 0
-        while count <25:
+        while count <1:
             count+=1
             #print(f"\n\nIteration {count}")
 
