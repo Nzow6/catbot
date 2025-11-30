@@ -96,6 +96,7 @@ def train_bot(cat_name, render: int = -1):
 
 
             steps += 1
+            the_one_reality_doctor_strange_saw = np.max(q_table[state])
             probabilities = softmax(q_table[state], tau)
             action = np.random.choice(env.action_space.n, p=probabilities)
             
@@ -113,10 +114,17 @@ def train_bot(cat_name, render: int = -1):
                 ar2, ac2, cr2, cc2 = get_state(next_state)
                 dist_before = abs(ar - cr) + abs(ac - cc)
                 dist_after = abs(ar2 - cr2) + abs(ac2 - cc2)
+                #scaled rewards
+                #reward += 0.5 * (dist_before - dist_after)
+                
+                #fixed reward system
+                
                 if dist_after < dist_before: 
                     reward += 0.5
                 elif dist_after > dist_before: 
                     reward -= 0.5
+                
+                
                     
             done = terminated or truncated       
     
@@ -124,7 +132,12 @@ def train_bot(cat_name, render: int = -1):
             if not done:
                 next_probs = softmax(q_table[next_state], tau)
                 next_action = np.random.choice(env.action_space.n, p=next_probs)
+                #SARSA
                 q_table[state][action] = q_table[state][action] + alpha_start * (reward + gamma * q_table[next_state][next_action] - q_table[state][action])
+                
+                #q learning
+                #q_table[state][action] = q_table[state][action] + alpha_start * (reward + gamma * the_one_reality_doctor_strange_saw - q_table[state][action])
+
                 total_rewards += reward
                 state = next_state
                 action = next_action
