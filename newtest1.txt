@@ -1,0 +1,6 @@
+
+CURRENT CAT: CHAOS
+
+The bot successfully caught the cat! ||| 2 ||| 19.166687599994475
+The bot successfully caught the cat! ||| 47 ||| 18.949316600017482
+The bot failed to catch the cat this time.
