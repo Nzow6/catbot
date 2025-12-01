@@ -320,7 +320,7 @@ class DustineCat(Cat):
 
 class AngryCat(Cat):
     rage_meter=0
-    rage_threshold = 4
+    rage_threshold = 8
     is_enraged = 1 # if i want to implement the harder version of angry cat then i will use this
 
     def _get_sprite_path(self) -> str:
@@ -350,6 +350,11 @@ class AngryCat(Cat):
             self.pos[0] = new_r
             self.pos[1] = new_c
             return 
+        
+
+        if self.rage_meter >=self.rage_threshold:
+            self.rage_meter = 0
+            self.pos = np.array(best_pos, dtype=np.int32)
         #print(f"rage is: {self.rage_meter}")
 
         """
@@ -380,9 +385,7 @@ class AngryCat(Cat):
             self.pos[1] = new_pos[1]
         """
 
-        if self.rage_meter >=self.rage_threshold:
-            self.rage_meter = 0
-            self.pos = np.array(best_pos, dtype=np.int32)
+        
 
 class ShyCat(Cat):
     last_direction = 's'
