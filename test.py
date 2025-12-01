@@ -17,7 +17,7 @@ def main():
     args = parser.parse_args()
 
     choices=['mittens', 'batmeow', 'paotsin', 'peekaboo', 'squiddyboi', 'trainer',"ryan","angry","shy","copy","dustine","stalker","diagonal","chaos","hunter"]
-    #choices=['angry']
+    choices=['angry']
     
     #choices = reversed(choices)
     # Train the agent
@@ -26,7 +26,7 @@ def main():
             print(f"\nCURRENT CAT: {cat.upper()}\n",file=f)
         print(f"\nCURRENT CAT: {cat.upper()}\n")
         count = 0
-        while count <1:
+        while count <100:
             count+=1
             #print(f"\n\nIteration {count}")
 

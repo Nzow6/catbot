@@ -57,10 +57,10 @@ def train_bot(cat_name, render: int = -1):
     gamma = 0.9 # discount factor
     max_steps = 250  # max steps per episode cos the bot might not reach the cat at all
     tau = 2.0
-    tau_decay = 0.995
-    min_tau = 0.01
+    tau_decay = 0.999
+    min_tau = 0.1
 
-    time_limit = 20.00
+    time_limit = 18.00
     filename = "test"+ cat_name + ".txt"
     with open(filename, 'w') as f:
         print("",file=f)
@@ -87,7 +87,7 @@ def train_bot(cat_name, render: int = -1):
         
         total_rewards = 0
         done = False
-
+        prev_moves = []
 
         #softmax selection
         while not done and steps < max_steps:
@@ -109,7 +109,8 @@ def train_bot(cat_name, render: int = -1):
                 done = True
             else: 
                 reward = -1 
-                
+
+                prev_moves.append(action)
                 #manhattan
                 ar2, ac2, cr2, cc2 = get_state(next_state)
                 dist_before = abs(ar - cr) + abs(ac - cc)
@@ -120,10 +121,23 @@ def train_bot(cat_name, render: int = -1):
                 #fixed reward system
                 
                 if dist_after < dist_before: 
-                    reward += 0.5
+                    reward += 1.5
                 elif dist_after > dist_before: 
-                    reward -= 0.5
-                
+                    reward -= 1.5
+
+                if len(prev_moves) == 4:
+                    seq = prev_moves
+                    
+                    def is_cycle(k):
+                        return seq == seq[:k] * (4 // k)
+
+                    repeating = any(is_cycle(k) for k in [1, 2, 3])
+
+                    if repeating:
+                        reward -= 3
+                    else:
+                        prev_moves.pop(0)
+                    
                 
                     
             done = terminated or truncated       
