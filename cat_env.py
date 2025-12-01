@@ -342,6 +342,13 @@ class AngryCat(Cat):
             self.rage_meter+=1
         else:
             self.rage_meter = 0
+            dirs = [(-1, 0), (1, 0), (0, -1), (0, 1)]
+            random.shuffle(dirs)
+            d = dirs[0]
+            new_r = min(max(0, self.pos[0] + d[0]), self.grid_size - 1)
+            new_c = min(max(0, self.pos[1] + d[1]), self.grid_size - 1)
+            self.pos[0] = new_r
+            self.pos[1] = new_c
             return 
         #print(f"rage is: {self.rage_meter}")
 
