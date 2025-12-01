@@ -56,7 +56,7 @@ def train_bot(cat_name, render: int = -1):
     alpha_decay = 0.995
     gamma = 0.9 # discount factor
     max_steps = 250  # max steps per episode cos the bot might not reach the cat at all
-    tau = 2.0
+    tau = 3.5
     tau_decay = 0.999
     min_tau = 0.1
 
@@ -88,6 +88,7 @@ def train_bot(cat_name, render: int = -1):
         total_rewards = 0
         done = False
         prev_moves = []
+        visited_states = {}
 
         #softmax selection
         while not done and steps < max_steps:
@@ -102,14 +103,20 @@ def train_bot(cat_name, render: int = -1):
             
             next_state, reward, terminated, truncated, _ = env.step(action) # perform action
             
+            visited_states[next_state] = visited_states.get(next_state, 0) + 1
+            if visited_states[next_state] == 1:
+                reward += 0.5     
+            elif visited_states[next_state] > 3:
+                reward -= 2.0    
+            
             ar, ac, cr, cc = get_state(state)
             
             if ar == cr and ac == cc:
                 reward = 100 
                 done = True
             else: 
-                reward = -1 
-
+                
+                reward -= 1 
                 prev_moves.append(action)
                 #manhattan
                 ar2, ac2, cr2, cc2 = get_state(next_state)
@@ -131,7 +138,7 @@ def train_bot(cat_name, render: int = -1):
                     def is_cycle(k):
                         return seq == seq[:k] * (4 // k)
 
-                    repeating = any(is_cycle(k) for k in [1, 2, 3])
+                    repeating = any(is_cycle(k) for k in [1, 2])
 
                     if repeating:
                         reward -= 3

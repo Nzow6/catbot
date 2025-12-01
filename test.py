@@ -17,7 +17,7 @@ def main():
     args = parser.parse_args()
 
     choices=['mittens', 'batmeow', 'paotsin', 'peekaboo', 'squiddyboi', 'trainer',"ryan","angry","shy","copy","dustine","stalker","diagonal","chaos","hunter"]
-    #choices=['angry']
+    choices=['squiddyboi']
     
     choices = reversed(choices)
     # Train the agent

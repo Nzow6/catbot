@@ -1,8 +1,28 @@
 
-CURRENT CAT: PAOTSIN
+CURRENT CAT: SQUIDDYBOI
 
-The bot successfully caught the cat! ||| 15 ||| 17.805178300011903
-The bot successfully caught the cat! ||| 15 ||| 17.063229599996703
-The bot successfully caught the cat! ||| 15 ||| 16.367492500023218
-The bot successfully caught the cat! ||| 15 ||| 16.95489270001417
-The bot successfully caught the cat! ||| 16 ||| 16.840253599977586
+The bot successfully caught the cat! ||| 21 ||| 18.47441020000042
+The bot successfully caught the cat! ||| 32 ||| 18.412055200000395
+The bot successfully caught the cat! ||| 27 ||| 18.422539700000925
+The bot successfully caught the cat! ||| 17 ||| 18.439506900000197
+The bot successfully caught the cat! ||| 15 ||| 18.385175500001424
+The bot successfully caught the cat! ||| 29 ||| 18.438073299999814
+The bot successfully caught the cat! ||| 41 ||| 18.427517800000714
+The bot successfully caught the cat! ||| 17 ||| 18.45674560000043
+The bot successfully caught the cat! ||| 21 ||| 18.4332157000008
+The bot successfully caught the cat! ||| 17 ||| 18.396868499999982
+The bot successfully caught the cat! ||| 18 ||| 18.49133449999863
+The bot successfully caught the cat! ||| 16 ||| 18.40512249999847
+The bot successfully caught the cat! ||| 17 ||| 18.403491700000814
+The bot successfully caught the cat! ||| 28 ||| 18.391699199999493
+The bot successfully caught the cat! ||| 21 ||| 18.42458179999994
+The bot successfully caught the cat! ||| 15 ||| 18.54221250000046
+The bot successfully caught the cat! ||| 14 ||| 18.526264500000252
+The bot successfully caught the cat! ||| 53 ||| 18.394340400000146
+The bot successfully caught the cat! ||| 21 ||| 18.432940700000472
+The bot successfully caught the cat! ||| 13 ||| 18.388730999999098
+The bot successfully caught the cat! ||| 17 ||| 18.523543999999674
+The bot successfully caught the cat! ||| 28 ||| 18.507192799999757
+The bot successfully caught the cat! ||| 15 ||| 18.426090099999783
+The bot successfully caught the cat! ||| 21 ||| 18.475387700000283
+The bot successfully caught the cat! ||| 20 ||| 18.513500600000043
